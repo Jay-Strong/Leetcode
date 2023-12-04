@@ -7,6 +7,6 @@ class Solution():
     def mySqrt(self) -> int:
         return floor(sqrt(self.num))
 
-number1 = Solution(8)
+number1 = Solution(81)
 sqrt1 = number1.mySqrt()
 print(f"The square root of {number1.num} is {sqrt1}.")
