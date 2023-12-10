@@ -1,6 +1,3 @@
-class String:
-    def __init__(self, strs: list[str]) -> None:
-       self.strs = strs[0][0]
 class Solution:        
     def isValid(self, s: str) -> bool:
         num_open_parenth = 0
