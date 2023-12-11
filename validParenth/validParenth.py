@@ -2,6 +2,7 @@ class Solution:
     def isValid(self, s: str) -> bool:
         if s == "" or len(s) == 1 or s[0] == ")" or s[0] == "]" or s[0] == "}":
             return False
+        
         num_open_parenth = 0
         num_closed_parenth = 0
         num_open_square = 0
@@ -21,6 +22,7 @@ class Solution:
                 num_open_square += 1
             if c == "]":
                 num_closed_square += 1
+
         if (num_open_parenth == num_closed_parenth) and (num_open_curley == num_closed_curley) and (num_open_square == num_closed_square):
             i = 0
             for i in range(i, len(s)):
