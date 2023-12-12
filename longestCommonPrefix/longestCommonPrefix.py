@@ -10,4 +10,4 @@ class Solution:
     
 if __name__ == "__main__":
     s = ["florida","flower","flow"]
-    print(Solution.longestCommonPrefix(s))
+    print(Solution().longestCommonPrefix(s))

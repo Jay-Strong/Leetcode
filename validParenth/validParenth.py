@@ -79,8 +79,10 @@ if __name__ == "__main__":
     #             temp = parenthesis_queue.pop(-1)
     #             if temp != "{":
     #                 return False
+
             
     #     if parenthesis_queue:
     #         return False
 
     #     return True
+    # py .\validParenth\validParenth.py
