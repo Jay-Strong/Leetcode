@@ -1,49 +1,86 @@
 class Solution:        
     def isValid(self, s: str) -> bool:
-        if s == "" or len(s) == 1 or s[0] == ")" or s[0] == "]" or s[0] == "}":
-            return False
-        
-        num_open_parenth = 0
-        num_closed_parenth = 0
-        num_open_square = 0
-        num_closed_square = 0
-        num_open_curley = 0
-        num_closed_curley = 0
-        for c in s:
-            if c == "(":
-                num_open_parenth += 1
-            if c == ")":
-                num_closed_parenth += 1
-            if c == "{":
-                num_open_curley += 1
-            if c == "}":
-                num_closed_curley += 1
-            if c == "[":
-                num_open_square += 1
-            if c == "]":
-                num_closed_square += 1
+        """
+        1. On an open paranthesis put a value in an array/stack
+        2. On a close pop the latest from the stack and check its the correct type, if not return false
+        3. If a close comes through and the stack is empty, return false, else return true
+        4. Once through the entire string, if the stack has anything remaining on it return false
 
-        if (num_open_parenth == num_closed_parenth) and (num_open_curley == num_closed_curley) and (num_open_square == num_closed_square):
-            i = 0
-            for i in range(i, len(s)):
-                if s[i] == "(":
-                    for i in range(i + 1, len(s)):
-                        if s[i] == ")":
-                            i += 1
-                            continue
-                elif s[i] == "[":
-                    for i in range(i + 1, len(s)):
-                        if s[i] == "]":
-                            i += 1
-                            continue
-                elif s[i] == "{":
-                    for i in range(i + 1, len(s)):
-                        if s[i] == "}":
-                            i += 1
-                            continue
-            return True
-        return False
+        Helpful Hints
+        
+        array.append(value) <- puts it at the end of the "stack"
+        array.pop(-1) <- takes the newest value, removes it from the list, returns its value
+
+        if array: <- True if a value, False if not
+
+        """
+        parenthesis_queue = []
+        
+        CLOSE_DICT = {"{": "}", "[": "]", "(": ")"}
+
+        for char in s:
+            if char in CLOSE_DICT.keys():
+                parenthesis_queue.append(char)
+                continue
+            
+            if not parenthesis_queue:
+                return False
+
+            if CLOSE_DICT[parenthesis_queue.pop(-1)] != char:
+                return False
+            
+        if parenthesis_queue:
+            return False
+
+        return True
 
 if __name__ == "__main__":
-    s = "([)]"
+    s = "{[]}"
     print(Solution().isValid(s))
+
+    # ==========================================================================================================================
+    # class Solution:        
+    # def isValid(self, s: str) -> bool:
+    #     """
+    #     1. On an open paranthesis put a value in an array/stack
+    #     2. On a close pop the latest from the stack and check its the correct type, if not return false
+    #     3. If a close comes through and the stack is empty, return false, else return true
+    #     4. Once through the entire string, if the stack has anything remaining on it return false
+
+    #     Helpful Hints
+        
+    #     array.append(value) <- puts it at the end of the "stack"
+    #     array.pop(-1) <- takes the newest value, removes it from the list, returns its value
+
+    #     if array: <- True if a value, False if not
+
+    #     """
+    #     parenthesis_queue = []
+    #     i = 0
+    #     for i in range(i, len(s)):
+    #         if s[i] == "(" or s[i] == "[" or s[i] == "{":
+    #             parenthesis_queue.append(s[i])
+    #             continue
+            
+    #         if not parenthesis_queue:
+    #             return False
+
+    #         if s[i] == ")":
+    #             temp = parenthesis_queue.pop(-1)
+    #             if temp != "(":
+    #                 return False
+            
+    #         if s[i] == "]":
+    #             temp = parenthesis_queue.pop(-1)
+    #             if temp != "[":
+    #                 return False
+            
+    #         if s[i] == "}":
+    #             temp = parenthesis_queue.pop(-1)
+    #             if temp != "{":
+    #                 return False
+            
+    #     if parenthesis_queue:
+    #         return False
+
+    #     return True
