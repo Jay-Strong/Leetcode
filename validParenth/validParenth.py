@@ -37,7 +37,7 @@ class Solution:
 if __name__ == "__main__":
     s = "{[]}"
     print(Solution().isValid(s))
-
+# py .\validParenth.py
     # ==========================================================================================================================
     # class Solution:        
     # def isValid(self, s: str) -> bool:
