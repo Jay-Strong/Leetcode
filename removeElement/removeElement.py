@@ -8,8 +8,8 @@ class Solution:
                     if i != val:  
                         k.append(i)
             new_length = len(k)
-            for i in range(original_lenth - new_length):
-                  k.append(0)  
+            # for i in range(original_lenth - new_length):
+            #       k.append(0)  
             return new_length, sorted(k)
 
 
