@@ -11,7 +11,7 @@ class Solution:
             k.sort()
             for i in range((original_lenth) - new_length):
                   k.append(0)  
-            return new_length, k
+            return new_length, sorted(k)
 
 
 
