@@ -1,5 +1,5 @@
 class Solution:
-    def removeElement(self, nums: list[int], val: int) -> int:
+    def removeElement(self, nums: list[int], val: int) -> list(int):
             self.nums = nums
             self.val = val
             original_lenth = len(nums)
@@ -10,7 +10,7 @@ class Solution:
             new_length = len(k)
             # for i in range(original_lenth - new_length):
             #       k.append(0)  
-            return new_length, sorted(k)
+            return k
 
 
 
@@ -18,7 +18,7 @@ class Solution:
 if __name__ == "__main__":
     # nums = [3,2,2,3]
     # val = 3
-    nums = [0,1,2,2,3,0,4,2]
+    nums = [3,2,2,3]
     val = 2
     print(Solution().removeElement(nums, val))
 
