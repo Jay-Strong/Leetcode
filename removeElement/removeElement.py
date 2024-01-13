@@ -7,9 +7,8 @@ class Solution:
             for i in nums:
                     if i != val:  
                         k.append(i)
-            new_length = len(k)
-            # for i in range(original_lenth - new_length):
-            #       k.append(0)  
+            # new_length = len(k)
+            # for i in range(original_lenth - new_length):      
             return k
 
 
