@@ -1,15 +1,14 @@
 class Solution:
-    def removeElement(self, nums: list[int], val: int) -> list(int):
-            self.nums = nums
-            self.val = val
-            original_lenth = len(nums)
-            k = []
-            for i in nums:
-                    if i != val:  
-                        k.append(i)
-            # new_length = len(k)
-            # for i in range(original_lenth - new_length):      
-            return k
+    def removeElement(self, nums: list[int], val: int) -> int:
+        original_length = len(nums)
+        k = 0
+        while val in nums:
+            for i in range(len(nums)):
+                if nums[i] == val:
+                    nums.pop(i)
+                    k += 1
+                    break
+        return original_length - k
 
 
 

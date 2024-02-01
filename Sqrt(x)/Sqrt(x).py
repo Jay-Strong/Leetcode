@@ -10,3 +10,5 @@ class Solution():
 number1 = Solution(81)
 sqrt1 = number1.mySqrt()
 print(f"The square root of {number1.num} is {sqrt1}.")
+
+# py .\sqrt.py
