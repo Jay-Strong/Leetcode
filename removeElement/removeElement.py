@@ -20,4 +20,4 @@ if __name__ == "__main__":
     val = 2
     print(Solution().removeElement(nums, val))
 
-# py .\removeElement.py
+# py.\removeElement\removeElement.py

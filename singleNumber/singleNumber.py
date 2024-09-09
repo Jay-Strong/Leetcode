@@ -5,3 +5,4 @@ class Solution:
 
 nums = [2,2,1]
 solution1 = Solution
+print(solution1)
